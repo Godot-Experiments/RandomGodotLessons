@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scn/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://Scn/Player.tscn" type="PackedScene" id=2]
+
+[node name="Level" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -86.9019
+margin_top = -46.4475
+margin_right = 1119.1
+margin_bottom = 747.552
+color = Color( 0.254902, 0.211765, 0.176471, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+process_mode = 0
+autostart = true
+[connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_Timer_timeout"]
