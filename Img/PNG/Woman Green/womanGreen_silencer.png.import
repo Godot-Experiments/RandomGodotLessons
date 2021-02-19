@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/womanGreen_silencer.png-8fb64d40bca0979c0a54a4b25aab2e90.stex"
+path="res://.import/womanGreen_silencer.png-c0c14fb3a74d3ec2118e10a939135407.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Woman Green/womanGreen_silencer.png"
-dest_files=[ "res://.import/womanGreen_silencer.png-8fb64d40bca0979c0a54a4b25aab2e90.stex" ]
+source_file="res://Img/PNG/Woman Green/womanGreen_silencer.png"
+dest_files=[ "res://.import/womanGreen_silencer.png-c0c14fb3a74d3ec2118e10a939135407.stex" ]
 
 [params]
 

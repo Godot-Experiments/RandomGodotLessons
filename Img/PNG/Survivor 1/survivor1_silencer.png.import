@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/survivor1_silencer.png-12a429c42db22d45bb6aa71daf40b98d.stex"
+path="res://.import/survivor1_silencer.png-a7600f00866bea54221651e9383b8b2e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Survivor 1/survivor1_silencer.png"
-dest_files=[ "res://.import/survivor1_silencer.png-12a429c42db22d45bb6aa71daf40b98d.stex" ]
+source_file="res://Img/PNG/Survivor 1/survivor1_silencer.png"
+dest_files=[ "res://.import/survivor1_silencer.png-a7600f00866bea54221651e9383b8b2e.stex" ]
 
 [params]
 

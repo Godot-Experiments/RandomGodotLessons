@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/soldier1_silencer.png-6ee378b5a8aed4fd4b84c0a3e1a88658.stex"
+path="res://.import/soldier1_silencer.png-b80a090036d7fb6a5d2e798ff6e4b64e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Soldier 1/soldier1_silencer.png"
-dest_files=[ "res://.import/soldier1_silencer.png-6ee378b5a8aed4fd4b84c0a3e1a88658.stex" ]
+source_file="res://Img/PNG/Soldier 1/soldier1_silencer.png"
+dest_files=[ "res://.import/soldier1_silencer.png-b80a090036d7fb6a5d2e798ff6e4b64e.stex" ]
 
 [params]
 

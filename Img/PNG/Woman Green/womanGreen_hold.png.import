@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/womanGreen_hold.png-21fc1f80c52baf171356095c0fc2305e.stex"
+path="res://.import/womanGreen_hold.png-6642220107be58b2d5f99be8ac928b33.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Woman Green/womanGreen_hold.png"
-dest_files=[ "res://.import/womanGreen_hold.png-21fc1f80c52baf171356095c0fc2305e.stex" ]
+source_file="res://Img/PNG/Woman Green/womanGreen_hold.png"
+dest_files=[ "res://.import/womanGreen_hold.png-6642220107be58b2d5f99be8ac928b33.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/robot1_silencer.png-7fa03244bc7acf88b87994d5ad435ef1.stex"
+path="res://.import/robot1_silencer.png-a7c47e658ed174a2f9afc4fda5fa7d3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Robot 1/robot1_silencer.png"
-dest_files=[ "res://.import/robot1_silencer.png-7fa03244bc7acf88b87994d5ad435ef1.stex" ]
+source_file="res://Img/PNG/Robot 1/robot1_silencer.png"
+dest_files=[ "res://.import/robot1_silencer.png-a7c47e658ed174a2f9afc4fda5fa7d3b.stex" ]
 
 [params]
 

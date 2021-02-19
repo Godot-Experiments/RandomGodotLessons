@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/zoimbie1_hold.png-9eaa7932f6279c3be25f00ad3b5fa758.stex"
+path="res://.import/zoimbie1_hold.png-e89be487b0ce61ffbbd604cb2789cf80.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Zombie 1/zoimbie1_hold.png"
-dest_files=[ "res://.import/zoimbie1_hold.png-9eaa7932f6279c3be25f00ad3b5fa758.stex" ]
+source_file="res://Img/PNG/Zombie 1/zoimbie1_hold.png"
+dest_files=[ "res://.import/zoimbie1_hold.png-e89be487b0ce61ffbbd604cb2789cf80.stex" ]
 
 [params]
 

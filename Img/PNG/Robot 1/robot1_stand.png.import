@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/robot1_stand.png-cb6415ccb1032b8ba74aac5561fb7e0f.stex"
+path="res://.import/robot1_stand.png-10e2f8e8ce9f2bfdc5912425128395c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Robot 1/robot1_stand.png"
-dest_files=[ "res://.import/robot1_stand.png-cb6415ccb1032b8ba74aac5561fb7e0f.stex" ]
+source_file="res://Img/PNG/Robot 1/robot1_stand.png"
+dest_files=[ "res://.import/robot1_stand.png-10e2f8e8ce9f2bfdc5912425128395c0.stex" ]
 
 [params]
 

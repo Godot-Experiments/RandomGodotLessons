@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/manBlue_reload.png-48ec9f1fe0a2abb460ea4f7239fda06c.stex"
+path="res://.import/manBlue_reload.png-eefcf40c7c3306df08c7c4abecbac596.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Man Blue/manBlue_reload.png"
-dest_files=[ "res://.import/manBlue_reload.png-48ec9f1fe0a2abb460ea4f7239fda06c.stex" ]
+source_file="res://Img/PNG/Man Blue/manBlue_reload.png"
+dest_files=[ "res://.import/manBlue_reload.png-eefcf40c7c3306df08c7c4abecbac596.stex" ]
 
 [params]
 

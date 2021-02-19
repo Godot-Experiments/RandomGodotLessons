@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/survivor1_machine.png-ea5c69f97e270de78f00c6afe9bebde9.stex"
+path="res://.import/survivor1_machine.png-a1b2303edf575ce0f6f52a67060447db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Survivor 1/survivor1_machine.png"
-dest_files=[ "res://.import/survivor1_machine.png-ea5c69f97e270de78f00c6afe9bebde9.stex" ]
+source_file="res://Img/PNG/Survivor 1/survivor1_machine.png"
+dest_files=[ "res://.import/survivor1_machine.png-a1b2303edf575ce0f6f52a67060447db.stex" ]
 
 [params]
 

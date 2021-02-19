@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hitman1_gun.png-7feddf570fe6470ee0483fcdda832ebb.stex"
+path="res://.import/hitman1_gun.png-a0443aac381780ecfdf84c40a2420c43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Hitman 1/hitman1_gun.png"
-dest_files=[ "res://.import/hitman1_gun.png-7feddf570fe6470ee0483fcdda832ebb.stex" ]
+source_file="res://Img/PNG/Hitman 1/hitman1_gun.png"
+dest_files=[ "res://.import/hitman1_gun.png-a0443aac381780ecfdf84c40a2420c43.stex" ]
 
 [params]
 

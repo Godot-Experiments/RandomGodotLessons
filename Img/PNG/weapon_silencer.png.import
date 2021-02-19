@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/weapon_silencer.png-e5423cfa1a9807f9db78e824c27031ec.stex"
+path="res://.import/weapon_silencer.png-6883357299a28d87aca9897d2f8176e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/weapon_silencer.png"
-dest_files=[ "res://.import/weapon_silencer.png-e5423cfa1a9807f9db78e824c27031ec.stex" ]
+source_file="res://Img/PNG/weapon_silencer.png"
+dest_files=[ "res://.import/weapon_silencer.png-6883357299a28d87aca9897d2f8176e1.stex" ]
 
 [params]
 

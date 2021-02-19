@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scn/Spawner.gd" type="Script" id=1]
 [ext_resource path="res://Scn/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Math.gd" type="Script" id=3]
+[ext_resource path="res://Scn/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scn/Walls.gd" type="Script" id=5]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_intensity = 5.25
+glow_strength = 1.1
+glow_blend_mode = 1
+glow_hdr_threshold = 0.5
+glow_hdr_luminance_cap = 2.0
 
 [node name="Level" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -86.9019
@@ -17,10 +29,72 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+process_mode = 0
+smoothing_enabled = true
+
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 process_mode = 0
 autostart = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.466667, 0.466667, 0.466667, 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Walls" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Wall" parent="Walls" instance=ExtResource( 4 )]
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 568, 348 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 568, 368 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 568, 388 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 588, 328 )
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 588, 348 )
+
+[node name="Wall7" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 588, 368 )
+
+[node name="Wall8" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 588, 388 )
+
+[node name="Wall9" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 608, 328 )
+
+[node name="Wall10" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 608, 348 )
+
+[node name="Wall11" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 608, 368 )
+
+[node name="Wall12" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 608, 388 )
+
+[node name="Wall13" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 628, 328 )
+
+[node name="Wall14" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 628, 348 )
+
+[node name="Wall15" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 628, 368 )
+
+[node name="Wall16" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 628, 388 )
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_Timer_timeout"]

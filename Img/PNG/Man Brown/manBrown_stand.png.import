@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/manBrown_stand.png-ef7cbf2a828059dc35eda93f270b4ae3.stex"
+path="res://.import/manBrown_stand.png-2bbe8f1de2be041069c64b94efadac1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Man Brown/manBrown_stand.png"
-dest_files=[ "res://.import/manBrown_stand.png-ef7cbf2a828059dc35eda93f270b4ae3.stex" ]
+source_file="res://Img/PNG/Man Brown/manBrown_stand.png"
+dest_files=[ "res://.import/manBrown_stand.png-2bbe8f1de2be041069c64b94efadac1c.stex" ]
 
 [params]
 

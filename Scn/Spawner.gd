@@ -1,8 +1,9 @@
 extends Node2D
 
-var spawn_points
-var player
-export (PackedScene) var zombie = preload("res://Scn/Zombie.tscn")
+var spawn_points : PoolVector2Array
+var player : Player
+#export var spawn_time: float = 5
+export (PackedScene) var zombie := preload("res://Scn/Zombie.tscn")
 
 func _ready():
 	var window_size = get_viewport_rect().size
@@ -15,14 +16,14 @@ func _ready():
 	]
 	player = get_node("../Player")
 	spawn_zomb()
-	$SpawnTimer.wait_time = .5
+	$SpawnTimer.wait_time = 5
 	$SpawnTimer.start()
 
 
 func spawn_zomb():
 	var zomb: Zombie = zombie.instance()
 	add_child(zomb) # add child underneath "EnemySpawner"
-	zomb.position = spawn_points[randi() % 4]
+	zomb.position = spawn_points[randi() % 4] + player.global_position - spawn_points[0] - spawn_points[2]
 	zomb.target = player
 
 func _on_Timer_timeout():
