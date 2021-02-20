@@ -1,28 +1,30 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scn/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://Solutions/Spawner.gd" type="Script" id=1]
 [ext_resource path="res://Scn/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Math.gd" type="Script" id=3]
 [ext_resource path="res://Scn/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scn/Walls.gd" type="Script" id=5]
+[ext_resource path="res://Solutions/Walls.gd" type="Script" id=5]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
+glow_enabled = true
 glow_intensity = 5.25
 glow_strength = 1.1
+glow_bloom = 0.01
 glow_blend_mode = 1
-glow_hdr_threshold = 0.5
+glow_hdr_threshold = 0.6
 glow_hdr_luminance_cap = 2.0
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -86.9019
-margin_top = -46.4475
-margin_right = 1119.1
-margin_bottom = 747.552
-color = Color( 0.254902, 0.211765, 0.176471, 1 )
+margin_left = -961.505
+margin_top = -639.63
+margin_right = 1766.5
+margin_bottom = 1200.37
+color = Color( 0.160784, 0.113725, 0.0745098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,10 +42,6 @@ script = ExtResource( 1 )
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 process_mode = 0
 autostart = true
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0.466667, 0.466667, 0.466667, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

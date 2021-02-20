@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "Bullet",
 "language": "GDScript",
-"path": "res://Scn/Bullet.gd"
+"path": "res://Solutions/Bullet.gd"
 }, {
 "base": "RigidBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Player.gd"
+"path": "res://Scn/Player.gd"
 }, {
-"base": "RigidBody2D",
+"base": "Reference",
 "class": "Zombie",
 "language": "GDScript",
-"path": "res://Scn/Zombie.gd"
+"path": "res://Solutions/Zombie.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",

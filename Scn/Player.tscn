@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Scn/Player.gd" type="Script" id=1]
 [ext_resource path="res://Img/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=2]
 [ext_resource path="res://Img/lite.png" type="Texture" id=3]
 
@@ -21,6 +21,7 @@ polygon = PoolVector2Array( -15.625, -12.375, -8.375, -14, -5.875, -20.25, 6.125
 position = Vector2( 35.0769, 9.40062 )
 
 [node name="Trace" type="Line2D" parent="Muzzle"]
+visible = false
 position = Vector2( 0.280579, 0 )
 points = PoolVector2Array( 0, 0, 218.482, 28.1435 )
 width = 2.0

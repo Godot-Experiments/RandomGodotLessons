@@ -17,9 +17,9 @@ var repr := {
 	-.5: "-1/2"
 }
 
-func _ready() -> void:
-	for i in range(10):
-		choose_angle()
+#func _ready() -> void:
+#	for i in range(10):
+#		choose_angle()
 
 
 

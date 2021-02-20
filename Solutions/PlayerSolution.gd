@@ -1,6 +1,5 @@
-#extends Area2D
 extends RigidBody2D
-class_name Player
+#class_name Player
 
 var speed := 2
 onready var trace := $Muzzle/Trace
@@ -26,5 +25,5 @@ func _physics_process(delta: float) -> void:
 #		$Muzzle/Trace/Light2D.position = trace.points[1] * 2 / 3
 #		$Muzzle/Trace/Light2D.scale = Vector2(trace.points[1].length() / 100, 1)
 #		draw_line($Muzzle.position, gmp, Color.yellow)
-	else:
-		trace.hide()
+#	else:
+#		trace.hide()

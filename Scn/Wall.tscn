@@ -14,6 +14,7 @@ angular_damp = 2.0
 shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.447059, 0.447059, 0.447059, 1 )
 margin_left = -10.0
 margin_top = -10.0
 margin_right = 10.0
