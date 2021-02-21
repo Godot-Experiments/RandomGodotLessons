@@ -17,9 +17,9 @@ _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Scn/Player.gd"
+"path": "res://Scn/Actors/Player.gd"
 }, {
-"base": "Reference",
+"base": "RigidBody2D",
 "class": "Zombie",
 "language": "GDScript",
 "path": "res://Solutions/Zombie.gd"
@@ -35,29 +35,6 @@ _global_script_class_icons={
 config/name="NameThis"
 run/main_scene="res://Scn/Level.tscn"
 config/icon="res://icon.png"
-
-[importer_defaults]
-
-texture={
-"compress/bptc_ldr": 0,
-"compress/hdr_mode": 0,
-"compress/lossy_quality": 0.7,
-"compress/mode": 0,
-"compress/normal_map": 0,
-"detect_3d": false,
-"flags/anisotropic": false,
-"flags/filter": false,
-"flags/mipmaps": false,
-"flags/repeat": 0,
-"flags/srgb": 2,
-"process/HDR_as_SRGB": false,
-"process/fix_alpha_border": true,
-"process/invert_color": false,
-"process/premult_alpha": false,
-"size_limit": 0,
-"stream": false,
-"svg/scale": 1.0
-}
 
 [input]
 
@@ -92,6 +69,16 @@ ui_down={
 fire={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+switch_gun={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"unicode":0,"echo":false,"script":null)
+ ]
+}
+sprint={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
  ]
 }
 

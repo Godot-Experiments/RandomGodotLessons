@@ -8,7 +8,8 @@ export (PackedScene) var spray_s := preload("res://Scn/Spray.tscn")
 func _on_Bullet_body_entered(body) -> void:
 	# if we hit an enemy
 	if body.is_in_group("Enemies"):
-		body.queue_free()
+		if body.has_method("dmg"):
+			body.dmg(1)
 	spawn_spray()
 	# despawn if we hit anything
 	queue_free()

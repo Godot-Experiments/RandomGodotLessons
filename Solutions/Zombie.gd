@@ -2,6 +2,8 @@ class_name Zombie
 extends RigidBody2D
 
 var target: Player
+export (PackedScene) var dead_zomb := preload("res://Scn/Actors/DeadZombie.tscn")
+var hp := 5
 
 func _ready() -> void:
 	add_to_group("Enemies")
@@ -13,6 +15,13 @@ func _physics_process(delta):
 #		apply_impulse(Vector2.ZERO, Vector2.RIGHT.rotated(rotation))
 		position += Vector2.RIGHT.rotated(rotation)
 
-
-#func _on_Zombie_body_entered(body):
+func dmg(amt: int) -> void:
+	hp -= amt
+	if hp <= 0:
+#		var dead_zombie = dead_zomb.instance()
+#		dead_zombie.position = position
+#		dead_zombie.rotation = rotation
+#		get_parent().add_child(dead_zombie)
+#		dead_zombie.set_physics_process(true)
+		queue_free()
 

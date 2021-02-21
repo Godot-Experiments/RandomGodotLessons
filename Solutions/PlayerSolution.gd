@@ -20,6 +20,8 @@ func _physics_process(delta: float) -> void:
 		bullet.set_rot(rotation)
 		bullet.global_position = $Muzzle.global_position
 		bullet.apply_impulse(Vector2.ZERO, Vector2.RIGHT.rotated(rotation) * 500)
+		
+		# extra visual stuff
 #		trace.show()
 #		trace.points[1] = trace.get_local_mouse_position()
 #		$Muzzle/Trace/Light2D.position = trace.points[1] * 2 / 3

@@ -1,0 +1,72 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Img/muzzle_flashs/m_9.png" type="Texture" id=1]
+[ext_resource path="res://Img/muzzle_flashs/m_15.png" type="Texture" id=2]
+[ext_resource path="res://Img/muzzle_flashs/m_2.png" type="Texture" id=3]
+[ext_resource path="res://Img/muzzle_flashs/m_7.png" type="Texture" id=4]
+[ext_resource path="res://Img/muzzle_flashs/m_14.png" type="Texture" id=5]
+[ext_resource path="res://Img/muzzle_flashs/m_3.png" type="Texture" id=6]
+[ext_resource path="res://Img/lite.png" type="Texture" id=7]
+[ext_resource path="res://Scn/Actors/Player.gd" type="Script" id=8]
+[ext_resource path="res://Scn/ShakyCam.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Img/muzzle_flashs/m_6.png" type="Texture" id=10]
+[ext_resource path="res://Img/muzzle_flashs/m_5.png" type="Texture" id=11]
+[ext_resource path="res://Img/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=12]
+[ext_resource path="res://Sfx/M4A1_Single-Kibblesbob-8540445.wav" type="AudioStream" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "fire",
+"speed": 30.0
+} ]
+
+[node name="Player" type="RigidBody2D"]
+position = Vector2( 424, 244 )
+mode = 3
+gravity_scale = 0.0
+script = ExtResource( 8 )
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -15.625, -12.375, -8.375, -14, -5.875, -20.25, 6.125, -21.625, 12.25, -13.25, 12.75, -7.625, 17, -0.125, 13.75, 5.25, 35.625, 6, 35.875, 13.25, 23.5, 14.875, 15.875, 21.375, -3.625, 21, -7.75, 14.625, -15.5, 13 )
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( 35.0769, 9.40062 )
+
+[node name="Fire" type="AnimatedSprite" parent="Muzzle"]
+modulate = Color( 1.25, 1.25, 1, 1 )
+position = Vector2( 18.6455, -0.248535 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 1 )
+animation = "fire"
+playing = true
+
+[node name="Trace" type="Line2D" parent="Muzzle"]
+visible = false
+position = Vector2( 0.280579, 0 )
+points = PoolVector2Array( 0, 0, 218.482, 28.1435 )
+width = 2.0
+default_color = Color( 1, 1, 0, 1 )
+
+[node name="Light2D" type="Light2D" parent="Muzzle/Trace"]
+position = Vector2( 110.942, 15.4056 )
+texture = ExtResource( 7 )
+color = Color( 0.980392, 0.87451, 0, 1 )
+
+[node name="Gunfire" type="AudioStreamPlayer2D" parent="Muzzle"]
+stream = ExtResource( 13 )
+volume_db = -4.0
+bus = "Sfx"
+
+[node name="Img" type="Sprite" parent="."]
+position = Vector2( 9.75, 0 )
+texture = ExtResource( 12 )
+
+[node name="Firetime" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.1
+one_shot = true
+
+[node name="Cam" parent="." instance=ExtResource( 9 )]
+smoothing_speed = 2.0

@@ -4,7 +4,7 @@ var spawn_points : PoolVector2Array
 var player
 
 export var spawn_time: float = 5
-export (PackedScene) var zombie := preload("res://Scn/Zombie.tscn")
+export (PackedScene) var zombie := preload("res://Scn/Actors/Zombie.tscn")
 
 func _ready():
 	# get screen size

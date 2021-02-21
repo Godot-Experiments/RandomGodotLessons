@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Solutions/Spawner.gd" type="Script" id=1]
-[ext_resource path="res://Scn/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scn/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Math.gd" type="Script" id=3]
-[ext_resource path="res://Scn/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scn/Environment/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Solutions/Walls.gd" type="Script" id=5]
+[ext_resource path="res://Scn/Environment/Tree.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -15,6 +16,7 @@ glow_bloom = 0.01
 glow_blend_mode = 1
 glow_hdr_threshold = 0.6
 glow_hdr_luminance_cap = 2.0
+glow_bicubic_upscale = true
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 3 )
@@ -30,11 +32,6 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-process_mode = 0
-smoothing_enabled = true
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 1 )
@@ -95,4 +92,19 @@ position = Vector2( 628, 368 )
 
 [node name="Wall16" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( 628, 388 )
+
+[node name="Tree" parent="." instance=ExtResource( 6 )]
+position = Vector2( 176.495, 74.6871 )
+rotation = 0.0942478
+z_index = 1
+
+[node name="Tree2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 324.495, 646.687 )
+rotation = -1.14319
+z_index = 1
+
+[node name="Tree3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 818.495, 66.6871 )
+rotation = -2.15723
+z_index = 1
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_Timer_timeout"]

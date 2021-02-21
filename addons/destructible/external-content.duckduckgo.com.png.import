@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_181.png-c0235bc479acd10bbf6aa3aefc6683b1.stex"
+path="res://.import/external-content.duckduckgo.com.png-993ae5d9aa62a81e15b73b65ffe221c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/PNG/Tiles/tile_181.png"
-dest_files=[ "res://.import/tile_181.png-c0235bc479acd10bbf6aa3aefc6683b1.stex" ]
+source_file="res://addons/destructible/external-content.duckduckgo.com.png"
+dest_files=[ "res://.import/external-content.duckduckgo.com.png-993ae5d9aa62a81e15b73b65ffe221c3.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
