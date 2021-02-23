@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Solutions/Zombie.gd" type="Script" id=1]
 [ext_resource path="res://Img/PNG/Zombie 1/zoimbie1_hold.png" type="Texture" id=2]
@@ -6,9 +6,12 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.0191
 
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -6.94121, -18.8403, -12.1061, 1.28949, -7.33851, 19.9625, 11.0697, 21.022, 18.8832, 15.4598, 16.7643, 7.91113, 10.9372, 7.64627, 12.7913, 1.55436, 10.6724, -6.52405, 16.6318, -6.52405, 19.9427, -14.47, 3.38855, -20.8268 )
+
 [node name="Zombie" type="RigidBody2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 mode = 3
 gravity_scale = 0.0
 script = ExtResource( 1 )
@@ -18,4 +21,8 @@ position = Vector2( 2, 0 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )

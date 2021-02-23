@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name Player
 
-var speed := 2
+var speed := 200
 export (PackedScene) var bullet_s = preload("res://Scn/Bullet.tscn")
 
 var guns := {
@@ -13,18 +13,35 @@ var spread := .1
 
 onready var Firetime := $Firetime
 onready var Gunfire := $Muzzle/Gunfire
+onready var Cam := $Cam
+onready var Anim := $Tween
+
+var target
+
 
 # This function runs every 1/60th of a second
 func _physics_process(delta: float) -> void:
-	position += (Input.get_action_strength("sprint") + 1)* speed * Vector2(
+	var vel = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		).normalized()
+	if vel.length_squared() != 0 or Input.is_action_pressed("fire"):
+		Engine.time_scale = 1
+		Anim.interpolate_property(Cam, "zoom", Cam.zoom, Vector2(1,1), .2)
+		Anim.start()
+	else:
+		Engine.time_scale = .25
+		Anim.interpolate_property(Cam, "zoom", Cam.zoom, Vector2(.9,.9), .2)
+		Anim.start()
+	
+	position += (Input.get_action_strength("sprint") + 1)* speed * delta * vel
 	
 	var gmp := get_global_mouse_position()
 	look_at(gmp)
+#	if target:
+#		look_at(target.global_position)
 	
-	if Input.is_action_pressed("fire") and Firetime.is_stopped():
+	if (Input.is_action_pressed("fire")) and Firetime.is_stopped():
 		if current_gun == 1:
 			for i in range(7):
 				fire()
@@ -62,3 +79,23 @@ func switch_gun() -> void:
 		Firetime.wait_time = .5
 		spread = .3
 		Gunfire.volume_db = 0
+
+
+func _on_Detection_body_entered(body):
+	if body.is_in_group("Enemies"):
+		body.add_to_group(name)
+	if !target:
+		retarget()
+
+
+func _on_Detection_body_exited(body):
+	body.remove_from_group(name)
+	retarget()
+
+func retarget():
+	var enemies := get_tree().get_nodes_in_group(name)
+	if enemies.size() > 0:
+		target = enemies[0]
+	else:
+		target = null
+	

@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Solutions/Spawner.gd" type="Script" id=1]
-[ext_resource path="res://Scn/Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scn/Actors/GunActor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Math.gd" type="Script" id=3]
 [ext_resource path="res://Scn/Environment/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Solutions/Walls.gd" type="Script" id=5]
 [ext_resource path="res://Scn/Environment/Tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://Scn/test.gd" type="Script" id=8]
+[ext_resource path="res://Scn/Actors/AIGunner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Img/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=10]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
-glow_enabled = true
 glow_intensity = 5.25
 glow_strength = 1.1
 glow_bloom = 0.01
@@ -22,16 +25,34 @@ glow_bicubic_upscale = true
 script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -961.505
-margin_top = -639.63
-margin_right = 1766.5
-margin_bottom = 1200.37
+margin_left = -1340.0
+margin_top = -1371.0
+margin_right = 3888.0
+margin_bottom = 2423.0
 color = Color( 0.160784, 0.113725, 0.0745098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GroupUp" type="Position2D" parent="."]
+position = Vector2( 581.427, 290.713 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 673.193, 557.85 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="Img" parent="Player" index="1"]
+texture = ExtResource( 10 )
+
+[node name="Cam" parent="Player" index="5"]
+current = true
+
+[node name="AIGunner" parent="." instance=ExtResource( 9 )]
+position = Vector2( 339.843, 347.223 )
+
+[node name="AIGunner2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 891.67, 280.443 )
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 1 )
@@ -44,54 +65,56 @@ autostart = true
 environment = SubResource( 1 )
 
 [node name="Walls" type="Node2D" parent="."]
+position = Vector2( -411.072, 211.893 )
 script = ExtResource( 5 )
 
 [node name="Wall" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 426.032, -159.353 )
 
 [node name="Wall2" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 568, 348 )
+position = Vector2( 426.032, -139.353 )
 
 [node name="Wall3" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 568, 368 )
+position = Vector2( 426.032, -119.353 )
 
 [node name="Wall4" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 568, 388 )
+position = Vector2( 426.032, -99.353 )
 
 [node name="Wall5" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 588, 328 )
+position = Vector2( 446.032, -159.353 )
 
 [node name="Wall6" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 588, 348 )
+position = Vector2( 446.032, -139.353 )
 
 [node name="Wall7" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 588, 368 )
+position = Vector2( 446.032, -119.353 )
 
 [node name="Wall8" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 588, 388 )
+position = Vector2( 446.032, -99.353 )
 
 [node name="Wall9" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 328 )
+position = Vector2( 466.032, -159.353 )
 
 [node name="Wall10" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 348 )
+position = Vector2( 466.032, -139.353 )
 
 [node name="Wall11" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 368 )
+position = Vector2( 466.032, -119.353 )
 
 [node name="Wall12" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 388 )
+position = Vector2( 466.032, -99.353 )
 
 [node name="Wall13" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 628, 328 )
+position = Vector2( 486.032, -159.353 )
 
 [node name="Wall14" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 628, 348 )
+position = Vector2( 486.032, -139.353 )
 
 [node name="Wall15" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 628, 368 )
+position = Vector2( 486.032, -119.353 )
 
 [node name="Wall16" parent="Walls" instance=ExtResource( 4 )]
-position = Vector2( 628, 388 )
+position = Vector2( 486.032, -99.353 )
 
 [node name="Tree" parent="." instance=ExtResource( 6 )]
 position = Vector2( 176.495, 74.6871 )
@@ -107,4 +130,25 @@ z_index = 1
 position = Vector2( 818.495, 66.6871 )
 rotation = -2.15723
 z_index = 1
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 421.07, 76.2475 )
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 8 )
+
+[node name="Position2D" type="Position2D" parent="icon"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0, 0, 0, 1 )
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_Timer_timeout"]
+
+[editable path="Player"]

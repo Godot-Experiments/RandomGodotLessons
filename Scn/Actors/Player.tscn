@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Img/muzzle_flashs/m_9.png" type="Texture" id=1]
 [ext_resource path="res://Img/muzzle_flashs/m_15.png" type="Texture" id=2]
@@ -22,8 +22,15 @@ animations = [ {
 "speed": 30.0
 } ]
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 350.0
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 5.97925, -21.4303, 12.2969, -13.4774, 12.7429, -7.97736, 16.9794, -0.0988617, 13.8577, 5.99583, 21.5892, 8.87091, 30.4982, 8.09137, 31.8346, 9.87317, 30.8323, 11.655, 25.2642, 12.3232, 22.1078, 14.5432, 16.0132, 20.6379, -2.93982, 21.8271, -8.43991, 14.7662, -15.2035, 12.6108, -15.3522, -11.9909, -7.91962, -13.9977, -5.8385, -20.464 )
+
 [node name="Player" type="RigidBody2D"]
 position = Vector2( 424, 244 )
+collision_mask = 0
 mode = 3
 gravity_scale = 0.0
 script = ExtResource( 8 )
@@ -35,12 +42,23 @@ polygon = PoolVector2Array( -15.625, -12.375, -8.375, -14, -5.875, -20.25, 6.125
 position = Vector2( 35.0769, 9.40062 )
 
 [node name="Fire" type="AnimatedSprite" parent="Muzzle"]
+visible = false
 modulate = Color( 1.25, 1.25, 1, 1 )
 position = Vector2( 18.6455, -0.248535 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
 animation = "fire"
+frame = 4
 playing = true
+
+[node name="Light2D" type="Light2D" parent="Muzzle/Fire"]
+position = Vector2( -138.365, 3.02856 )
+texture = ExtResource( 7 )
+offset = Vector2( 360, 0 )
+texture_scale = 8.0
+color = Color( 0.980392, 0.87451, 0, 1 )
+energy = 1.5
+shadow_enabled = true
 
 [node name="Trace" type="Line2D" parent="Muzzle"]
 visible = false
@@ -48,11 +66,6 @@ position = Vector2( 0.280579, 0 )
 points = PoolVector2Array( 0, 0, 218.482, 28.1435 )
 width = 2.0
 default_color = Color( 1, 1, 0, 1 )
-
-[node name="Light2D" type="Light2D" parent="Muzzle/Trace"]
-position = Vector2( 110.942, 15.4056 )
-texture = ExtResource( 7 )
-color = Color( 0.980392, 0.87451, 0, 1 )
 
 [node name="Gunfire" type="AudioStreamPlayer2D" parent="Muzzle"]
 stream = ExtResource( 13 )
@@ -70,3 +83,20 @@ one_shot = true
 
 [node name="Cam" parent="." instance=ExtResource( 9 )]
 smoothing_speed = 2.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Detection" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="Area" type="CollisionShape2D" parent="Detection"]
+visible = false
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource( 3 )
+[connection signal="body_entered" from="Detection" to="." method="_on_Detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_Detection_body_exited"]

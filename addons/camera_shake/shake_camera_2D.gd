@@ -40,3 +40,7 @@ func _on_Frequency_timeout():
 func _on_Duration_timeout():
 	_reset()
 	$Frequency.stop()
+
+var look_dist := 128
+func _physics_process(delta):
+	position = lerp(position, get_local_mouse_position().normalized() * look_dist, .05)

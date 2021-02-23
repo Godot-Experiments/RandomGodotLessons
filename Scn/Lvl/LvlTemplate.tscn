@@ -1,0 +1,151 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Solutions/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://Img/PNG/Tiles/tile_181.png" type="Texture" id=2]
+[ext_resource path="res://Scn/Actors/Player.gd" type="Script" id=3]
+[ext_resource path="res://Solutions/Walls.gd" type="Script" id=4]
+[ext_resource path="res://Scn/Environment/Tree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scn/Environment/Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scn/Actors/Player.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_intensity = 5.25
+glow_strength = 1.1
+glow_bloom = 0.01
+glow_blend_mode = 1
+glow_hdr_threshold = 0.6
+glow_hdr_luminance_cap = 2.0
+glow_bicubic_upscale = true
+
+[node name="LvlTemplate" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1340.0
+margin_top = -1371.0
+margin_right = 3888.0
+margin_bottom = 2423.0
+color = Color( 0.160784, 0.113725, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="RigidBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 424, 244 )
+collision_mask = 0
+mode = 3
+gravity_scale = 0.0
+script = ExtResource( 3 )
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+process_mode = 0
+autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2( 152, 304 )
+script = ExtResource( 4 )
+
+[node name="Wall" type="RigidBody2D" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 16.9513, 12.4986 )
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Wall2" type="RigidBody2D" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 16.9513, 32.4986 )
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Wall3" type="RigidBody2D" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 16.9513, 52.4986 )
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Wall4" type="RigidBody2D" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 16.9513, 72.4986 )
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Wall5" type="RigidBody2D" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 36.9513, 12.4986 )
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Wall6" type="RigidBody2D" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 36.9513, 32.4986 )
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Wall7" type="RigidBody2D" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 36.9513, 52.4986 )
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Wall8" type="RigidBody2D" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 36.9513, 72.4986 )
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Wall9" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 17, 92 )
+
+[node name="Wall10" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 17, 112 )
+
+[node name="Wall11" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 17, 132 )
+
+[node name="Wall12" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 17, 152 )
+
+[node name="Wall13" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 37, 92 )
+
+[node name="Wall14" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 37, 112 )
+
+[node name="Wall15" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 37, 132 )
+
+[node name="Wall16" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( 37, 152 )
+
+[node name="Tree" type="Sprite" parent="." instance=ExtResource( 5 )]
+position = Vector2( 176.495, 74.6871 )
+rotation = 0.0942478
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0, 0, 0, 1 )
+[connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_Timer_timeout"]

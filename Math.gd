@@ -18,6 +18,10 @@ var repr := {
 }
 
 #func _ready() -> void:
+#	get_tree().get_root().set_transparent_background(true)
+#	OS.window_per_pixel_transparency_enabled = true
+
+
 #	for i in range(10):
 #		choose_angle()
 

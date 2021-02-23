@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Img/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=9]
+[ext_resource path="res://Scn/Actors/Damageable.gd" type="Script" id=11]
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 5.97925, -21.4303, 12.2969, -13.4774, 12.7429, -7.97736, 16.9794, -0.0988617, 13.8577, 5.99583, 21.5892, 8.87091, 30.4982, 8.09137, 31.8346, 9.87317, 30.8323, 11.655, 25.2642, 12.3232, 22.1078, 14.5432, 16.0132, 20.6379, -2.93982, 21.8271, -8.43991, 14.7662, -15.2035, 12.6108, -15.3522, -11.9909, -7.91962, -13.9977, -5.8385, -20.464 )
+
+[node name="Damageable" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 11 )
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -15.625, -12.375, -8.375, -14, -5.875, -20.25, 6.125, -21.625, 12.25, -13.25, 12.75, -7.625, 17, -0.125, 13.75, 5.25, 35.625, 6, 35.875, 13.25, 23.5, 14.875, 15.875, 21.375, -3.625, 21, -7.75, 14.625, -15.5, 13 )
+
+[node name="Img" type="Sprite" parent="."]
+texture = ExtResource( 9 )
+offset = Vector2( 9.75, 0 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource( 3 )

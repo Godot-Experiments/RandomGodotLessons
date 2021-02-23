@@ -3,12 +3,12 @@ extends Node2D
 var spawn_points : PoolVector2Array
 var player
 
-export var spawn_time: float = 5
+export var spawn_time: float = 1
 export (PackedScene) var zombie := preload("res://Scn/Actors/Zombie.tscn")
 
 func _ready():
 	# get screen size
-	var screen_size = get_viewport_rect().size
+	var screen_size = get_viewport_rect().size * 1.5
 
 	# Spawn at midpoints of screen
 	spawn_points = [
