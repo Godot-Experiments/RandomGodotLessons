@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scn/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://scn/Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scn/Player/Cam.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 17.003
+
+[node name="Player" type="RigidBody2D"]
+gravity_scale = 1.5
+script = ExtResource( 1 )
+box = ExtResource( 2 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Img" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 16, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cam" type="Camera2D" parent="."]
+offset = Vector2( 0, -250 )
+current = true
+process_mode = 0
+smoothing_enabled = true
+smoothing_speed = 10.0
+script = ExtResource( 3 )

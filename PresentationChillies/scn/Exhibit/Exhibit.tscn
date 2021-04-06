@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://font/Typori.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scn/Exhibit/Exhibit.gd" type="Script" id=3]
+[ext_resource path="res://SinusoidalAnims.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Show"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("All/Msg:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("All/Msg:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("All/Msg:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("All/Msg:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("All/Hidden:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("All/Hidden:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("All/Hidden:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("All/Hidden:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[node name="Exhibit" type="Node2D"]
+script = ExtResource( 3 )
+msg = NodePath("All/Msg")
+txt = NodePath("All/Msg/Txt")
+hidden = NodePath("All/Hidden")
+
+[node name="All" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -250.0
+margin_right = 500.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 1000, 500 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="HBoxContainer" parent="All"]
+margin_right = 1000.0
+
+[node name="Msg" type="MarginContainer" parent="All"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 4.0
+margin_right = 1000.0
+margin_bottom = 496.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="All/Msg"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_right = 1000.0
+margin_bottom = 492.0
+
+[node name="Txt" type="Label" parent="All/Msg"]
+margin_top = 205.0
+margin_right = 1000.0
+margin_bottom = 286.0
+custom_fonts/font = ExtResource( 2 )
+text = "Ruhi - I raytraced a bunny, which perfectly fit, nuff said 
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hidden" type="HBoxContainer" parent="All"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 500.0
+margin_right = 1000.0
+margin_bottom = 500.0
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/Show = SubResource( 1 )
+script = ExtResource( 4 )
