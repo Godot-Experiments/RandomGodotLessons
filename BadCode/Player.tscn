@@ -7,12 +7,13 @@
 [ext_resource path="res://Img/muzzle_flashs/m_14.png" type="Texture" id=5]
 [ext_resource path="res://Img/muzzle_flashs/m_3.png" type="Texture" id=6]
 [ext_resource path="res://Img/lite.png" type="Texture" id=7]
-[ext_resource path="res://Scn/Actors/Player.gd" type="Script" id=8]
+[ext_resource path="res://BadCode/Player.gd" type="Script" id=8]
 [ext_resource path="res://Scn/ShakyCam.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Img/muzzle_flashs/m_6.png" type="Texture" id=10]
 [ext_resource path="res://Img/muzzle_flashs/m_5.png" type="Texture" id=11]
 [ext_resource path="res://Img/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=12]
 [ext_resource path="res://Sfx/M4A1_Single-Kibblesbob-8540445.wav" type="AudioStream" id=13]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

@@ -2,14 +2,15 @@ class_name Bullet
 extends RigidBody2D
 
 var rot: float = 0
+var player_bullet := false
 export (PackedScene) var spray_s := preload("res://Scn/Spray.tscn")
 
 # this happens when our bullet hits another kinematic or rigid body
 func _on_Bullet_body_entered(body) -> void:
 	# if we hit an enemy
-	if body.is_in_group("Enemies"):
-		if body.has_method("dmg"):
-			body.dmg(1)
+#	if body.is_in_group(Global.ENEMIES):
+	if body.has_method("dmg"):
+		body.dmg(1)
 	spawn_spray()
 	# despawn if we hit anything
 	queue_free()

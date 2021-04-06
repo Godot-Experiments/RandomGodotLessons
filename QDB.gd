@@ -17,6 +17,13 @@ var repr := {
 	-.5: "-1/2"
 }
 
+# could possibly optimize by making values integers for faster comparisons, but may take more memory
+# if want to store value: string map
+var qa := {
+	"6": "4 + 2", 
+	"2": "1 + 1?"
+}
+
 #func _ready() -> void:
 #	get_tree().get_root().set_transparent_background(true)
 #	OS.window_per_pixel_transparency_enabled = true
@@ -25,11 +32,6 @@ var repr := {
 #	for i in range(10):
 #		choose_angle()
 
-
-
-
-
-	
 
 func choose_angle():
 	randomize()

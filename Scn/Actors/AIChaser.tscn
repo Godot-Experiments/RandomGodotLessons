@@ -1,14 +1,36 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scn/Actors/Moveable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Img/PNG/Zombie 1/zoimbie1_hold.png" type="Texture" id=2]
+[ext_resource path="res://Scn/Actors/AIChaser.gd" type="Script" id=3]
+[ext_resource path="res://Font/Typori_Paragraph.tres" type="DynamicFont" id=4]
 
-[node name="ChaserAI" instance=ExtResource( 1 )]
+[node name="AIChaser" instance=ExtResource( 1 )]
+collision_layer = 4
+collision_mask = 2147483648
+script = ExtResource( 3 )
+speed = 100
 
 [node name="Hitbox" parent="." index="0"]
+position = Vector2( -7.6, 0 )
 polygon = PoolVector2Array( -2, -19, -2, 19, 26, 19, 26, 8, 19, 8, 19, -7, 26, -7, 26, -19 )
 
 [node name="Img" parent="." index="1"]
-position = Vector2( 9.75, 0 )
+position = Vector2( 2.15, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
+
+[node name="Value" type="Label" parent="." index="3"]
+visible = false
+margin_left = -26.0
+margin_top = -10.0
+margin_right = 26.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 26, 10 )
+custom_fonts/font = ExtResource( 4 )
+text = "SDFSDF"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

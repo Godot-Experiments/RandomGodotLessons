@@ -1,14 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scn/Actors/GunActor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Img/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=2]
 
 [node name="AIGunner" instance=ExtResource( 1 )]
-collision_layer = 0
 collision_mask = 0
 
-[node name="Img" parent="." index="1"]
-texture = ExtResource( 2 )
+[node name="Line2D" parent="." index="0"]
+points = PoolVector2Array( 32.5, 6.75, 350, 6.75 )
 
 [node name="Fire" parent="Muzzle" index="0"]
 frame = 1
+
+[node name="Cam" parent="." index="6"]
+rotating = true

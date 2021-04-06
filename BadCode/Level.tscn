@@ -1,15 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Solutions/Spawner.gd" type="Script" id=1]
 [ext_resource path="res://Scn/Actors/GunActor.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Math.gd" type="Script" id=3]
 [ext_resource path="res://Scn/Environment/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Solutions/Walls.gd" type="Script" id=5]
 [ext_resource path="res://Scn/Environment/Tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
-[ext_resource path="res://Scn/test.gd" type="Script" id=8]
+[ext_resource path="res://BadCode/test.gd" type="Script" id=8]
 [ext_resource path="res://Scn/Actors/AIGunner.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Img/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=10]
+[ext_resource path="res://BadCode/test2.gd" type="Script" id=10]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -22,7 +20,6 @@ glow_hdr_luminance_cap = 2.0
 glow_bicubic_upscale = true
 
 [node name="Level" type="Node2D"]
-script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -1340.0
@@ -39,11 +36,11 @@ position = Vector2( 581.427, 290.713 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 673.193, 557.85 )
-collision_layer = 0
 collision_mask = 0
+player_controlled = true
 
-[node name="Img" parent="Player" index="1"]
-texture = ExtResource( 10 )
+[node name="Fire" parent="Player/Muzzle" index="0"]
+frame = 0
 
 [node name="Cam" parent="Player" index="5"]
 current = true
@@ -66,7 +63,6 @@ environment = SubResource( 1 )
 
 [node name="Walls" type="Node2D" parent="."]
 position = Vector2( -411.072, 211.893 )
-script = ExtResource( 5 )
 
 [node name="Wall" parent="Walls" instance=ExtResource( 4 )]
 position = Vector2( 426.032, -159.353 )
@@ -144,6 +140,70 @@ script = ExtResource( 8 )
 position = Vector2( 0.140564, -6.10352e-05 )
 
 [node name="Position2D2" type="Position2D" parent="icon"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon2" type="Sprite" parent="."]
+position = Vector2( 421.07, 76.2475 )
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 10 )
+target_path = NodePath("../icon")
+
+[node name="Position2D" type="Position2D" parent="icon2"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon2"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon3" type="Sprite" parent="."]
+position = Vector2( 421.07, 76.2475 )
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 10 )
+target_path = NodePath("../icon2")
+
+[node name="Position2D" type="Position2D" parent="icon3"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon3"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon4" type="Sprite" parent="."]
+position = Vector2( 421.07, 76.2475 )
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 10 )
+target_path = NodePath("../icon3")
+
+[node name="Position2D" type="Position2D" parent="icon4"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon4"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon5" type="Sprite" parent="."]
+position = Vector2( 421.07, 76.2475 )
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 10 )
+target_path = NodePath("../icon4")
+
+[node name="Position2D" type="Position2D" parent="icon5"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon5"]
 position = Vector2( 63.6366, -6.10352e-05 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

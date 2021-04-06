@@ -1,0 +1,280 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://BadCode/test2.gd" type="Script" id=1]
+[ext_resource path="res://BadCode/test.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scn/Snake.gd" type="Script" id=4]
+
+[node name="Snake" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="icon" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="icon"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon2" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+target_path = NodePath("../icon")
+
+[node name="Position2D" type="Position2D" parent="icon2"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon2"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon3" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+target_path = NodePath("../icon2")
+
+[node name="Position2D" type="Position2D" parent="icon3"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon3"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon4" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+target_path = NodePath("../icon3")
+
+[node name="Position2D" type="Position2D" parent="icon4"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon4"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon5" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+target_path = NodePath("../icon4")
+
+[node name="Position2D" type="Position2D" parent="icon5"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon5"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon6" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+target_path = NodePath("../icon4")
+
+[node name="Position2D" type="Position2D" parent="icon6"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon6"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon7" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon7"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon7"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon8" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon8"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon8"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon9" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon9"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon9"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon10" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon10"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon10"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon11" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon11"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon11"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon12" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon12"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon12"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon13" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon13"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon13"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon14" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon14"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon14"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon15" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon15"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon15"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon16" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon16"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon16"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon17" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon17"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon17"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon18" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon18"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon18"]
+position = Vector2( 63.6366, -6.10352e-05 )
+
+[node name="icon19" type="Sprite" parent="."]
+rotation = -0.193489
+scale = Vector2( 0.5, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -32 )
+script = ExtResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="icon19"]
+position = Vector2( 0.140564, -6.10352e-05 )
+
+[node name="Position2D2" type="Position2D" parent="icon19"]
+position = Vector2( 63.6366, -6.10352e-05 )
